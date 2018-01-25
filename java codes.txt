@@ -1,0 +1,670 @@
+-----------------------------------------------------------------------
+*********Conditional & Control Structure*******
+-----------------------------------------------------------------------
+
+1. Print the factorial of given number
+
+class FactorialExample
+{  
+ public static void main(String args[])
+{  
+  int i,fact=1;  
+  int number=5;  
+  for(i=1;i<=number;i++)
+{    
+      fact=fact*i;    
+  }    
+  System.out.println("Factorial of "+number+" is: "+fact);    
+ }  
+}  
+
+
+2. Print the mathematical table of give number
+
+import java.util.Scanner;
+public class Multiplication_Table 
+{
+    public static void main(String[] args) 
+    {
+        Scanner s = new Scanner(System.in);
+	System.out.print("Enter number:");        
+	int n=s.nextInt();
+        for(int i=1; i <= 10; i++)
+        {
+            System.out.println(n+" * "+i+" = "+n*i);
+        }
+    }
+}
+
+3. Find biggest/smallest number among 'N' numbers
+
+import java.util.Scanner;
+public class Largest_Number 
+{
+    public static void main(String[] args) 
+    {
+        int n, max;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter number of elements in the array:");
+        n = s.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter elements of array:");
+        for(int i = 0; i < n; i++)
+        {
+            a[i] = s.nextInt();
+        }
+        max = a[0];
+        for(int i = 0; i < n; i++)
+        {
+            if(max < a[i])
+            {
+                max = a[i];
+            }
+        }
+        System.out.println("Maximum value:"+max);
+    }
+}
+
+4. Print the mathematical tables from 1 to 10
+
+import java.util.Scanner;
+ 
+class MultiplicationTable
+{
+   public static void main(String args[])
+   {
+      int n, c;
+      System.out.println("Enter an integer to print it's multiplication table");
+      Scanner in = new Scanner(System.in);
+      n = in.nextInt();
+      System.out.println("Multiplication table of "+n+" is :-");
+ 
+      for ( c = 1 ; c <= 10 ; c++ )
+         System.out.println(n+"*"+c+" = "+(n*c));
+   }
+}
+
+5. Find whether given number is prime number or not
+
+public class PrimeExample{    
+ public static void main(String args[]){    
+  int i,m=0,flag=0;      
+  int n=3;  
+  m=n/2;      
+  if(n==0||n==1){  
+   System.out.println(n+" is not prime number");      
+  }else{  
+   for(i=2;i<=m;i++){      
+    if(n%i==0){      
+     System.out.println(n+" is not prime number");      
+     flag=1;      
+     break;      
+    }      
+   }      
+   if(flag==0)  { System.out.println(n+" is prime number"); }  
+  }
+}    
+}   
+
+6. Print the prime numbers between 2 to 100
+
+class PrimeNumbers
+{
+   public static void main (String[] args)
+   {		
+       int i =0;
+       int num =0;
+       String  primeNumbers = "";
+
+       for (i = 1; i <= 100; i++)         
+       { 		  	  
+          int counter=0; 	  
+          for(num =i; num>=1; num--)
+	  {
+             if(i%num==0)
+	     {
+ 		counter = counter + 1;
+	     }
+	  }
+	  if (counter ==2)
+	  {
+	     primeNumbers = primeNumbers + i + " ";
+	  }	
+       }	
+       System.out.println("Prime numbers from 1 to 100 are :");
+       System.out.println(primeNumbers);
+   }
+}
+
+7. Print factorial of all the numbers between given range
+
+import java.util.Scanner;
+public class FactorialNumber
+{
+         public static void main(String ars[])
+       {
+               int fact=1,b,c;
+            Scanner s=new Scanner(System.in);
+            System.out.print("Enter A Number for get Factorial : ");
+            b=s.nextInt();
+            c=b;
+            while(c>0)
+                  {
+                    fact=fact*c;
+                            c-- ;
+                   }
+            System.out.println();
+            System.out.println("Factorial of "+b+" is : "+fact);
+         }
+}
+
+8. Find whether the given number is palindrome or not.
+
+import java.util.Scanner;
+class Palindrome 
+{
+public static void main(String[] args) 
+{
+int a,no,b,temp=0;
+Scanner s=new Scanner(System.in);
+System.out.println("Enter any num: ");
+no=s.nextInt();
+b=no;
+while(no>0)
+{
+a=no%10;
+no=no/10;
+temp=temp*10+a;
+}
+if(temp==b)
+{
+System.out.println("Palindrome");
+}
+else
+{
+System.out.println("not Palindrome");
+}
+}
+}
+
+9. Find whether the given number is Armstrong number or not
+
+class ArmstrongExample{  
+  public static void main(String[] args)  {  
+    int c=0,a,temp;  
+    int n=153;
+    temp=n;  
+    while(n>0)  
+    {  
+    a=n%10;  
+    n=n/10;  
+    c=c+(a*a*a);  
+    }  
+    if(temp==c)  
+    System.out.println("armstrong number");   
+    else  
+        System.out.println("Not armstrong number");   
+   }  
+}  
+-----------------------------------------------------------------
+*********String Operations***************
+-----------------------------------------------------------------
+1. Write a program to compare two Strings
+
+import java.util.Scanner;
+ 
+class CompareStrings
+{
+   public static void main(String args[])
+   {
+      String s1, s2;
+      Scanner in = new Scanner(System.in);
+ 
+      System.out.println("Enter the first string");
+      s1 = in.nextLine();
+ 
+      System.out.println("Enter the second string");
+      s2 = in.nextLine();
+ 
+      if ( s1.compareTo(s2) > 0 )
+         System.out.println("First string is greater than second.");
+      else if ( s1.compareTo(s2) < 0 )
+         System.out.println("First string is smaller than second.");
+      else   
+         System.out.println("Both strings are equal.");
+   }
+}
+
+2. Write a program to print the give string in reverse order
+
+import java.util.*;
+ 
+class ReverseString
+{
+   public static void main(String args[])
+   {
+      String original, reverse = "";
+      Scanner in = new Scanner(System.in);
+ 
+      System.out.println("Enter a string to reverse");
+      original = in.nextLine();
+ 
+      int length = original.length();
+ 
+      for ( int i = length - 1 ; i >= 0 ; i-- )
+         reverse = reverse + original.charAt(i);
+ 
+      System.out.println("Reverse of entered string is: "+reverse);
+   }
+}
+
+3. Write a program to find whether a give string is palindrome or not
+
+import java.util.Scanner;
+ 
+class ChkPalindrome
+{
+   public static void main(String args[])
+   {
+      String str, rev = "";
+      Scanner sc = new Scanner(System.in);
+ 
+      System.out.println("Enter a string:");
+      str = sc.nextLine();
+ 
+      int length = str.length();
+ 
+      for ( int i = length - 1; i >= 0; i-- )
+         rev = rev + str.charAt(i);
+ 
+      if (str.equals(rev))
+         System.out.println(str+" is a palindrome");
+      else
+         System.out.println(str+" is not a palindrome");
+ 
+   }
+}
+ 
+4. Write a program to find number of words in given string
+
+public class WordCount
+{ 
+	public static void main(String args[])
+	{ 
+		String s = "welcome to candid java tutorial";
+ 
+		int count = 1;
+ 
+		for (int i = 0; i < s.length() - 1; i++)
+		{
+			if ((s.charAt(i) == ' ') && (s.charAt(i + 1) != ' '))
+			{
+				count++;
+ 
+			}
+		}
+ 		System.out.println("Number of words in a string = " + count);
+	}
+}
+
+5. Write a program to display first character of each word in capital letter of given String
+
+import java.util.*;
+public class FirstLetterCapital
+{
+    public static void main(String args[])
+    {
+        Scanner ob=new Scanner(System.in);
+        System.out.println("Enter the sentence.");
+        String s=ob.nextLine();
+
+        s=" "+s;
+        String cap="";
+        for(int i=0;i<s.length();i++)
+        {
+            char x=s.charAt(i);
+            if(x==' ')
+            {
+                cap=cap+" ";
+                char y=s.charAt(i+1);
+                cap=cap+Character.toUpperCase(y);
+                i++;
+            }
+            else
+            {
+                cap=cap+x;
+            }
+        }
+        System.out.println("The new String with capital letters is: "+"\n"+cap);
+    }
+}
+
+6. Write a program to find number of occurrence of each character in given string
+
+import java.util.Scanner;
+public class CountCharacters {
+
+     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a String");
+        String s = sc.next().toLowerCase();
+        System.out.println("Enter a character to count in the string " + s);
+        char c = sc.next(".").toLowerCase().charAt(0); 
+        int cn = 0;
+        for (char cc : s.toCharArray()) {
+            if (c == cc) {
+                cn++;
+            }
+        }
+        System.out.println(c + " occurs " + cn + " times in " + s);
+        sc.close();
+    }
+}
+
+-----------------------------------------------------------------------------------------
+******************Arrays - Single Dimension**************
+-----------------------------------------------------------------------------------------
+
+1. Read 'N' numbers and display the same
+
+import java.util.Scanner;
+public class Array_Sum
+{
+    public static void main(String[] args) 
+    {
+        int n, sum = 0;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter no. of elements you want in array:");
+        n = s.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter all the elements:");
+        for(int i = 0; i < n; i++)
+        {
+            a[i] = s.nextInt();
+            sum = sum + a[i];
+        }
+        System.out.println("Sum:"+sum);
+    }
+}
+
+2. Find biggest and smallest number between given 'N' Numbers
+
+public class LargestSmallest 
+{
+	public static void main(String[] args) 
+	{
+		int a[] = new int[] { 23, 34, 13, 64, 72, 90, 10, 15, 9, 27 };
+
+		int min = a[0]; 
+		int max = a[0];
+
+		for (int i = 1; i < a.length; i++)  
+		{
+			if (a[i] > max) 
+			{
+				max = a[i];
+			}
+			if (a[i] < min) 
+			{
+				min = a[i];
+			}
+		}
+
+		System.out.println("Largest Number in a given array is : " + max);
+		System.out.println("Smallest Number in a given array is : " + min);
+	}
+
+}
+
+3.  Write a program to search whether given numbers is present or not using linear search
+
+import java.util.Scanner;
+class LinearSearchExample
+{
+   public static void main(String args[])
+   {
+      int counter, num, item, array[];
+      Scanner input = new Scanner(System.in);
+      System.out.println("Enter number of elements:");
+      num = input.nextInt(); 
+      array = new int[num]; 
+      System.out.println("Enter " + num + " integers");
+      for (counter = 0; counter < num; counter++)
+        array[counter] = input.nextInt();
+
+      System.out.println("Enter the search value:");
+      item = input.nextInt();
+
+      for (counter = 0; counter < num; counter++)
+      {
+         if (array[counter] == item) 
+         {
+           System.out.println(item+" is present at location "+(counter+1));
+           break;
+         }
+      }
+      if (counter == num)
+        System.out.println(item + " doesn't exist in array.");
+   }
+}
+
+4. Write a program to search whether given numbers is present or not using binary search
+
+import java.util.Scanner;
+ 
+class BinarySearch 
+{
+  public static void main(String args[])
+  {
+    int c, first, last, middle, n, search, array[];
+ 
+    Scanner in = new Scanner(System.in);
+    System.out.println("Enter number of elements");
+    n = in.nextInt(); 
+    array = new int[n];
+ 
+    System.out.println("Enter " + n + " integers");
+ 
+ 
+    for (c = 0; c < n; c++)
+      array[c] = in.nextInt();
+ 
+    System.out.println("Enter value to find");
+    search = in.nextInt();
+ 
+    first  = 0;
+    last   = n - 1;
+    middle = (first + last)/2;
+ 
+    while( first <= last )
+    {
+      if ( array[middle] < search )
+        first = middle + 1;    
+      else if ( array[middle] == search ) 
+      {
+        System.out.println(search + " found at location " + (middle + 1) + ".");
+        break;
+      }
+      else
+         last = middle - 1;
+ 
+      middle = (first + last)/2;
+   }
+   if ( first > last )
+      System.out.println(search + " is not present in the list.\n");
+  }
+}
+
+5. Write a program to insert a number at the given position
+
+ import java.util.Scanner;
+public class Insert_Array 
+{
+    public static void main(String[] args) 
+    {
+        int n, pos, x;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter no. of elements you want in array:");
+        n = s.nextInt();
+        int a[] = new int[n+1];
+        System.out.println("Enter all the elements:");
+        for(int i = 0; i < n; i++)
+        {
+            a[i] = s.nextInt();
+        }
+        System.out.print("Enter the position where you want to insert element:");
+        pos = s.nextInt();
+        System.out.print("Enter the element you want to insert:");
+        x = s.nextInt();
+        for(int i = (n-1); i >= (pos-1); i--)
+        {
+            a[i+1] = a[i];
+        }
+        a[pos-1] = x;
+        System.out.print("After inserting:");
+        for(int i = 0; i < n; i++)
+        {
+            System.out.print(a[i]+",");
+        }
+        System.out.print(a[n]);
+    }
+}
+
+6. Write a program to delete the given number from the array
+
+import java.util.Scanner;
+public class Delete
+{
+    public static void main(String[] args) 
+    {
+        int n, x, flag = 1, loc = 0;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter no. of elements you want in array:");
+        n = s.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter all the elements:");
+        for (int i = 0; i < n; i++) 
+        {
+            a[i] = s.nextInt();
+        }
+        System.out.print("Enter the element you want to delete:");
+        x = s.nextInt();
+        for (int i = 0; i < n; i++) 
+        {
+            if(a[i] == x)
+            {
+                flag =1;
+                loc = i;
+                break;
+            }
+            else
+            {
+                flag = 0;
+            }
+        }
+        if(flag == 1)
+        {
+            for(int i = loc+1; i < n; i++)
+            {
+                a[i-1] = a[i];
+            }
+            System.out.print("After Deleting:");
+            for (int i = 0; i < n-2; i++) 
+            {
+                System.out.print(a[i]+",");
+            }
+            System.out.print(a[n-2]);
+        }
+        else
+        {
+            System.out.println("Element not found");
+        }
+    }
+}
+
+7. Write a program to delete the number in a given position from the array
+
+class RepeatElement 
+{
+    void printRepeating(int arr[], int size) 
+    {
+        int i, j;
+        System.out.println("Repeated Elements are :");
+        for (i = 0; i < size; i++) 
+        {
+            for (j = i + 1; j < size; j++) 
+            {
+                if (arr[i] == arr[j]) 
+                    System.out.print(arr[i] + " ");
+            }
+        }
+    }
+ 
+    public static void main(String[] args) 
+    {
+        RepeatElement repeat = new RepeatElement();
+        int arr[] = {4, 2, 4, 5, 2, 3, 1};
+        int arr_size = arr.length;
+        repeat.printRepeating(arr, arr_size);
+    }
+}
+
+8. Write program to remove all the duplicate numbers in a given array
+
+public class RemoveDuplicateInArrayExample{  
+public static int removeDuplicateElements(int arr[], int n){  
+        if (n==0 || n==1){  
+            return n;  
+        }  
+        int[] temp = new int[n];  
+        int j = 0;  
+        for (int i=0; i<n-1; i++){  
+            if (arr[i] != arr[i+1]){  
+                temp[j++] = arr[i];  
+            }  
+         }  
+        temp[j++] = arr[n-1];     
+        for (int i=0; i<j; i++){  
+            arr[i] = temp[i];  
+        }  
+        return j;  
+    }  
+       
+    public static void main (String[] args) {  
+        int arr[] = {10,20,20,30,30,40,50,50};  
+        int length = arr.length;  
+        length = removeDuplicateElements(arr, length);  
+        for (int i=0; i<length; i++)  
+           System.out.print(arr[i]+" ");  
+    }  
+}  
+
+9. Write a program to count occurrence of each number in a given array
+
+import java.util.Scanner;
+public class Count_Occurrence
+{
+    public static void main(String[] args) 
+    {
+        int n, x, count = 0, i = 0;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter no. of elements you want in array:");
+        n = s.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter all the elements:");
+        for(i = 0; i < n; i++)
+        {
+            a[i] = s.nextInt();
+        }
+        System.out.print("Enter the element of which you want to count number of occurrences:");
+        x = s.nextInt();
+        for(i = 0; i < n; i++)
+        {
+            if(a[i] == x)
+            {
+                count++;
+            }
+        }
+        System.out.println("Number of Occurrence of the Element:"+count);
+    }
+}
